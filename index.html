@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Půjčovna objednávka</h1>
+    <form>
+        <fieldset class="typ-kola" id="typ-kola">
+            <legend>Typ kola</legend>
+            <div>
+                <label>
+                    <input type="checkbox" name="horske" value="500"> horské 500 Kč/den
+                </label>
+                <label for=""><input type="number" name="horske-ks" min="0"> ks</label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="detske" value="200"> dětské 200 Kč/den
+                </label>
+                <label for=""><input type="number" name="detske-ks" min="0"> ks</label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="silnicni" value="1500"> silniční 1 500 Kč/den
+                </label>
+                <label for=""><input type="number" name="silnicni-ks" min="0"> ks</label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="gravel" value="2500"> gravel 2 500 Kč/den
+                </label>
+                <label for=""><input type="number" name="gravel-ks" min="0"> ks</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Doba zápůjčky</legend>
+            <select name="doba" id="doba">
+                <option value="5">5 dnů</option>
+                <option value="7">7 dnů</option>
+                <option value="14">14 dnů</option>
+                <option value="30">30 dnů</option>
+            </select>
+        </fieldset>
+        <fieldset class="doplnky" id="doplnky">
+            <legend>Doplňky</legend>
+            <label>
+                <input type="radio" name="nosic" value="1.05">
+                cyklonosič střešní (+ 5 % z celkové ceny zápůjčky navíc)
+            </label>
+            <label>
+                <input type="radio" name="nosic" value="1.1">
+                cyklonosič na tažné zařízení (+ 10 % z celkové ceny zápůjčky navíc)
+            </label>
+            <label>
+                <input type="radio" name="nosic" value="1" checked>
+                není třeba cyklonosič
+            </label>
+        </fieldset>
+        <div class="vypocet-ceny">
+            <button id="celkova-cena">Spočítat cenu</button>
+            <p>Celkem: <span id="celkova-cena-vysledek">0</span> Kč</p>
+        </div>
+        <div id="sekce-max-utrata">
+            <label>
+                Maximální možná útrata:
+                <input type="number" name="max-utrata" id="max-utrata" min="0">
+            </label>
+            <p id="max-utrata-zprava"></p>
+        </div>
+        <label>E-mail:
+            <input type="email" name="email" required>
+        </label>
+        <button type="submit" id="submit">Odeslat objednávku</button>
+        <p class="chyba" id="chyba"></p>
+    </form>
+</body>
+
+<script src="./index.js"></script>
+
+</html>

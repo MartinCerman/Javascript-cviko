@@ -1,0 +1,28 @@
+form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.typ-kola input[type="number"] {
+    width: 2rem;
+}
+
+.doplnky {
+    display: flex;
+    flex-direction: column;
+}
+
+.vypocet-ceny {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.chyba {
+    color: red;
+    font-weight: bolder;
+}
